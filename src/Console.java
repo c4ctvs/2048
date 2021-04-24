@@ -1,7 +1,13 @@
+import java.io.IOException;
+
 public class Console extends Engine implements Game { //Klasa Console dziedziczy Engine oraz implementuje interfejs Game
     public void Play(){
+        int input;
+        Arrows x = new Arrows();
         while(true)
         {
+            Show();
+           // x.keyPressed(KeyEc);
 
         }
     }
@@ -16,7 +22,7 @@ public class Console extends Engine implements Game { //Klasa Console dziedziczy
 
     public static void main(String args[]){
         Console Game = new Console();
-        Game.Show();
+        Game.Play();
     }
 
 }

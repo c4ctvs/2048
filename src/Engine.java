@@ -41,8 +41,23 @@ public class Engine {
 
         @Override
         public void keyPressed(KeyEvent e) {
-            int arrow = e.getKeyCode();
-            System.out.println(arrow);
+            int key = e.getKeyCode();
+
+            if (key == KeyEvent.VK_LEFT) {
+               System.out.println("lewo");
+            }
+
+            if (key == KeyEvent.VK_RIGHT) {
+                System.out.println("prawo");
+            }
+
+            if (key == KeyEvent.VK_UP) {
+                System.out.println("gora");
+            }
+
+            if (key == KeyEvent.VK_DOWN) {
+                System.out.println("dol");
+            }
         }
 
         @Override
