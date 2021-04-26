@@ -6,6 +6,7 @@ public class Console extends Engine implements Game { //Klasa Console dziedziczy
         while(true) {
             Show();
             arrows();
+            generateRandomSquares();
         }
     }
     public void Show(){

@@ -126,6 +126,18 @@ public class Engine  {
         }
     }
 
+    void generateRandomSquares()
+    {
+        for(int i = 0; i<2; i++)
+        {
+            int x = generator.nextInt(4);
+            int y = generator.nextInt(4);
+            if(board[x][y].getValue() == 0)
+                fill(x, y, 2);
+        }
+    }
+
+
   /*
 
    To wejdzie do klasy GUI
