@@ -41,16 +41,17 @@ public class Engine  {
                 if(board[x][y].getValue() != 0)
                 {
                     if(y-1 >= 0) {
-                        if (board[x][y + 1].getValue() == 0) {
-                            board[x][y - 1].setValue(board[x][y].getValue());
+                        if (board[x][y-1].getValue() == 0) {
+                            board[x][y-1].setValue(board[x][y].getValue());
                             board[x][y].setValue(0);
                             moveLeft();
                         }
-                    }
+
                     else if(board[x][y-1].getValue() == board[x][y].getValue())
                     {
-                        board[x][y-1].setValue(board[x][y].getValue() + board[x][y+1].getValue());
+                        board[x][y-1].setValue(board[x][y].getValue() + board[x][y-1].getValue());
                         board[x][y].setValue(0);
+                    }
                     }
 
                 }
@@ -64,8 +65,7 @@ public class Engine  {
             {
                 if(board[x][y].getValue() != 0)
                 {
-                    if(y+1 <= 3)
-                    {
+                    if(y+1 <= 3) {
                         if(board[x][y+1].getValue() == 0){
                             board[x][y+1].setValue(board[x][y].getValue());
                             board[x][y].setValue(0);
@@ -82,20 +82,22 @@ public class Engine  {
             }
         }
     }
-    void moveUp(){
-        for(int x=0; x<4; x++)
-        {
-            for(int y=0; y<4; y++)
-            {
-                if(board[x][y].getValue() != 0)
-                {
-                    if(x-1 >= 0)
-                    {
-                        board[x-1][y].setValue(board[x][y].getValue());
-                        board[x][y].setValue(0);
-                        moveUp();
+    void moveUp() {
+        for (int x = 0; x < 4; x++) {
+            for (int y = 0; y < 4; y++) {
+                if (board[x][y].getValue() != 0) {
+                    if (x - 1 >= 0) {
+                        if (board[x - 1][y].getValue() == 0)
+                        {
+                            board[x - 1][y].setValue(board[x][y].getValue());
+                            board[x][y].setValue(0);
+                            moveUp();
+                        } else if (board[x - 1][y].getValue() == board[x][y].getValue())
+                        {
+                            board[x - 1][y].setValue(board[x][y].getValue() + board[x-1][y].getValue());
+                            board[x][y].setValue(0);
+                        }
                     }
-
                 }
             }
         }
@@ -107,13 +109,18 @@ public class Engine  {
             {
                 if(board[x][y].getValue() != 0)
                 {
-                    if(x+1 <= 3)
-                    {
-                        board[x+1][y].setValue(board[x][y].getValue());
-                        board[x][y].setValue(0);
-                        moveDown();
+                    if(x+1 <= 3) {
+                        if (board[x+1][y].getValue() == 0) {
+                            board[x + 1][y].setValue(board[x][y].getValue());
+                            board[x][y].setValue(0);
+                            moveDown();
+                        }
+                       else if(board[x+1][y].getValue() == board[x][y].getValue())
+                        {
+                            board[x+1][y].setValue(board[x][y].getValue() + board[x+1][y].getValue());
+                            board[x][y].setValue(0);
+                        }
                     }
-
                 }
             }
         }
