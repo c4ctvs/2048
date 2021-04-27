@@ -39,60 +39,24 @@ public class GUI extends JFrame{
 
             for (int x = 0; x < 4; x++) {
                 for (int y = 0; y < 4; y++) {
-                    if(board[x][y].getValue() == 0)
-                        {
-                             fillColor(g,"#EDC691", x,y);
-                        }
-                    else if(board[x][y].getValue() == 2)
-                         {
-                             fillColor(g,"#EBBA78", x,y);
-                         }
-                    else if(board[x][y].getValue() == 4)
-                         {
-                             fillColor(g,"#EBAA52", x,y);
-                         }
-                    else if(board[x][y].getValue() == 8)
-                         {
-                             fillColor(g,"#E89f3C", x,y);
-                         }
-                    else if(board[x][y].getValue() == 16)
-                         {
-                             fillColor(g,"#E69155", x,y);
-                         }
-                    else if(board[x][y].getValue() == 32)
-                         {
-                             fillColor(g,"#E8823A", x,y);
-                         }
-                    else if(board[x][y].getValue() == 64)
-                         {
-                             fillColor(g,"#FFBF47", x,y);
-                         }
-                    else if(board[x][y].getValue() == 128)
-                    {
-                        fillColor(g,"#ffb324", x,y);
+                    switch (board[x][y].getValue()) {
+                        case 0 -> fillColor(g, "#EDC691", x, y);
+                        case 2 -> fillColor(g, "#EBBA78", x, y);
+                        case 4 -> fillColor(g, "#EBAA52", x, y);
+                        case 8 -> fillColor(g, "#E89f3C", x, y);
+                        case 16 -> fillColor(g, "#E69155", x, y);
+                        case 32 -> fillColor(g, "#E8823A", x, y);
+                        case 64 -> fillColor(g, "#FFBF47", x, y);
+                        case 128 -> fillColor(g, "#ffb324", x, y);
+                        case 256 -> fillColor(g, "#ffb04f", x, y);
+                        case 512 -> fillColor(g, "#ff8e3d", x, y);
+                        case 1024 -> fillColor(g, "#ffd04f", x, y);
+                        case 2048 -> fillColor(g, "#fcba05", x, y);
                     }
-                    else if(board[x][y].getValue() == 256)
-                    {
-                        fillColor(g,"#ffb04f", x,y);
-                    }
-                    else if(board[x][y].getValue() == 512)
-                    {
-                        fillColor(g,"#ff8e3d", x,y);
-                    }
-                    else if(board[x][y].getValue() == 1024)
-                    {
-                        fillColor(g,"#ffd04f", x,y);
-                    }
-                    else if(board[x][y].getValue() == 2048)
-                    {
-                        fillColor(g,"#fcba05", x,y);
-                    }
-                    if(board[x][y].getValue() != 0)
-                    {
-                        g.setColor(Color.BLACK);
-                        g.drawString(Integer.toString(board[x][y].getValue()), x*80 + 140, y*80 + 80 +80);
-                    }
-
+                   if(board[x][y].getValue() != 0)
+                   {
+                       writeValue(g, x, y);
+                   }
 
                 }
             }
@@ -104,6 +68,12 @@ public class GUI extends JFrame{
             g.setColor(Color.decode(color));
             g.fillRect((spacing + 3 * x) * 25, (spacing + 3 * y) * 25, 80 - 2 * spacing, 80 - 2 * spacing);
         }
+        void writeValue(Graphics g, int x, int y)
+        {
+            g.setColor(Color.BLACK);
+            g.drawString(Integer.toString(board[x][y].getValue()), x*80 + 140, y*80 + 80 +80);
+        }
+
 
     }
 }
