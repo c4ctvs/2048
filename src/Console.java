@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Console extends Engine implements Game { //Klasa Console dziedziczy Engine oraz implementuje interfejs Game
