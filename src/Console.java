@@ -35,9 +35,6 @@ public class Console extends Engine implements Game { //Klasa Console dziedziczy
     }
 
 
-    public static void main(String args[]){
-        Console Game = new Console();
-        Game.Play();
-    }
+
 
 }

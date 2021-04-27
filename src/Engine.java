@@ -51,6 +51,7 @@ public class Engine  {
                     {
                         board[x][y-1].setValue(board[x][y].getValue() + board[x][y-1].getValue());
                         board[x][y].setValue(0);
+
                     }
                     }
 
@@ -75,6 +76,7 @@ public class Engine  {
                         {
                             board[x][y+1].setValue(board[x][y].getValue() + board[x][y+1].getValue());
                             board[x][y].setValue(0);
+
                         }
                     }
 
@@ -96,6 +98,7 @@ public class Engine  {
                         {
                             board[x - 1][y].setValue(board[x][y].getValue() + board[x-1][y].getValue());
                             board[x][y].setValue(0);
+
                         }
                     }
                 }
@@ -119,6 +122,7 @@ public class Engine  {
                         {
                             board[x+1][y].setValue(board[x][y].getValue() + board[x+1][y].getValue());
                             board[x][y].setValue(0);
+
                         }
                     }
                 }
@@ -138,37 +142,7 @@ public class Engine  {
     }
 
 
-  /*
 
-   To wejdzie do klasy GUI
-
-   public class Arrows implements KeyListener {
-        Arrows(){
-        addKeyListener(this);
-        }
-        @Override
-        public void keyTyped(KeyEvent e) {
-
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-            int key = e.getKeyCode();
-
-            switch (key) {
-                case KeyEvent.VK_LEFT -> System.out.println("lewo");
-                case KeyEvent.VK_RIGHT -> System.out.println("prawo");
-                case KeyEvent.VK_UP -> System.out.println("gora");
-                case KeyEvent.VK_DOWN -> System.out.println("dol");
-            }
-
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-
-        }
-    }*/
 
 }
 
