@@ -13,7 +13,7 @@ public class EventSquare extends Square{
 
 
     public enum EventType {
-        DOUBLE, HALF, RANDOM_MOVE;
+        DOUBLE, HALF, RANDOM_MOVE
     }
 
 }
