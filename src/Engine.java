@@ -14,7 +14,7 @@ public class Engine  {
     void fillTable(){
         for(int x=0; x<4; x++){
             for(int y=0; y<4; y++){
-                this.board[x][y] = new Square();
+                this.board[x][y] = new ValueSquare();
             }
         }
     }

@@ -4,11 +4,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
-public class GUIGame extends Engine implements Game{
+public class GUIGame extends Game{
     GUI gui;
-    public void Play(){
-        Show();
-    }
     public void Show(){
         gui = new GUI();
     }
@@ -82,9 +79,6 @@ public class GUI extends JFrame{
 public class Arrows implements KeyListener {
 
         @Override
-        public void keyTyped(KeyEvent e) {}
-
-        @Override
         public void keyPressed(KeyEvent e) {
             int key = e.getKeyCode();
 
@@ -98,6 +92,8 @@ public class Arrows implements KeyListener {
 
         }
 
+        @Override
+        public void keyTyped(KeyEvent e) {}
         @Override
         public void keyReleased(KeyEvent e) {}
     }

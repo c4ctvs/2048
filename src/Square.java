@@ -1,14 +1,8 @@
-public class Square {
-    private int value;
+abstract public class Square {
 
-    public Square(){
-        this.value = 0;
-    }
-    public Square(int value_){
-        this.value = value_;
-    }
+    abstract protected int getValue();
+    abstract protected void setValue(int v);
 
-    protected int getValue(){ return this.value; }
-    protected void setValue(int v){ this.value = v;}
+
 
 }
