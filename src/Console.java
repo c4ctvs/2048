@@ -1,13 +1,6 @@
 import java.util.Scanner;
 
-public class Console extends Engine implements Game { //Klasa Console dziedziczy Engine oraz implementuje interfejs Game
-    public void Play(){
-        while(true) {
-            Show();
-            arrows();
-            generateRandomSquares();
-        }
-    }
+public class Console extends Game { //Klasa Console dziedziczy Engine oraz implementuje interfejs Game
     public void Show(){
         for(int x=0; x<4; x++){
             for(int y=0; y<4; y++){
@@ -15,7 +8,12 @@ public class Console extends Engine implements Game { //Klasa Console dziedziczy
             }
             System.out.printf("%n");
         }
+        arrows();
+        generateRandomSquares();
     }
+
+// TODO
+//    ZMIENIC NA WSAD
 
     public int readKeyboardInput(){
         Scanner input = new Scanner(System.in);

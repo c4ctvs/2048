@@ -1,5 +1,7 @@
-interface Game  {
-    void Play();
-    void Show();
+public abstract class Game extends Engine {
+    void Play(){
+        Show();
+    }
+    abstract void Show();
 
 }
