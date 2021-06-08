@@ -49,8 +49,10 @@ public class GUI extends JFrame{
                         case 512 -> fillColor(g, "#ff8e3d", x, y);
                         case 1024 -> fillColor(g, "#ffd04f", x, y);
                         case 2048 -> fillColor(g, "#fcba05", x, y);
+                        case -1 -> fillColor(g, "#919191", x ,y);
+                        case -2 -> fillColor(g, "#ff87f7", x ,y);
                     }
-                   if(board[x][y].getValue() != 0)
+                   if(board[x][y].getValue() != 0 && board[x][y].getValue() != -1 && board[x][y].getValue() != -2)
                    {
                        writeValue(g, x, y);
                    }
@@ -89,6 +91,10 @@ public class Arrows implements KeyListener {
                 case KeyEvent.VK_DOWN -> moveRight();
             }
             generateRandomSquares();
+            tryToDeleteBlocks();
+            tryToDeleteEvents();
+            tryToAddBlocks();
+            tryToAddEvents();
 
         }
 

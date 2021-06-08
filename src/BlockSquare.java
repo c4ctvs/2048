@@ -1,6 +1,8 @@
 public class BlockSquare extends Square{
 
-    final protected int value = 102; //ASCII B
+    final Type squareType = Type.BLOCK;
+
+    final protected int value = -1;
 
     @Override
     public int getValue() {
@@ -9,7 +11,10 @@ public class BlockSquare extends Square{
 
     @Override
     public void setValue(int value) {
-        System.out.println("Error, value of block square is final");
     }
 
+    @Override
+    protected Type getType() {
+        return squareType;
+    }
 }

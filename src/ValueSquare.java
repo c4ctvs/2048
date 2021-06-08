@@ -1,6 +1,6 @@
 public class ValueSquare extends Square{
     protected int value;
-
+    final Type squareType = Type.VALUE;
 
     public ValueSquare(){
         this.value = 0;
@@ -17,5 +17,10 @@ public class ValueSquare extends Square{
     @Override
     public void setValue(int value) {
         this.value = value;
+    }
+
+    @Override
+    protected Type getType() {
+        return squareType;
     }
 }

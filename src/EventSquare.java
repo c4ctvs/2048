@@ -1,19 +1,37 @@
-public class EventSquare extends Square{
 
-    final protected int value = 105; //ASCII E
+import java.util.Random;
+
+public class EventSquare extends Square{
+    Type squareType = Type.VALUE;
+
+    final protected int value = -2; //ASCII E
+
+    public EventSquare(){
+        Random generator = new Random();
+        int nr = generator.nextInt(2);
+        squareType = Type.values()[nr];
+    }
+
+    public EventSquare(Square x){
+        Random generator = new Random();
+        int nr = generator.nextInt(3);
+        squareType = Type.values()[nr];
+    }
+
+
     @Override
     protected int getValue() {
-        return 0;
+        return value;
     }
 
     @Override
     protected void setValue(int v) {
-
+        System.out.println(squareType);
     }
 
-
-    public enum EventType {
-        DOUBLE, HALF, RANDOM_MOVE
+    @Override
+    protected Type getType() {
+        return squareType;
     }
 
 }
